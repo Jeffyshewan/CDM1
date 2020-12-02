@@ -54,7 +54,8 @@ jobs:
           at: /tmp
       - run:
           name: Deploy app
-          command: netlify deploy --prod --auth $NETLIFY_AUTH_TOKEN
+          command: sudo npm install -g --silent netlify-cli
+          netlify deploy --prod --auth $NETLIFY_AUTH_TOKEN
   back-test-unit:
     docker:
       - image: circleci/node:dubnium-browsers
