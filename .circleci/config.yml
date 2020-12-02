@@ -178,6 +178,8 @@ workflows:
       - server-doc-deploy:
           requires:
             - server-doc-build
+          context:
+            - dockerHub
           filters:
             branches:
               only: main
